@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{11F5C4B0-A840-0D90-C384-89845849DC16}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "CustomEditorTools",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		}
+	]
+}
