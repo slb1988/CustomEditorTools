@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <init>
+        <log text="RuntimeConfig initialization"/>
+    	<trace filename="true" enable="true"/>
+        <log text="$S(PluginDir) path-> $S(BuildDir)"/>
+        <dumpvars/>
+        <copyFile src="$S(PluginDir)/../../Content/Config.json" dst="$S(BuildDir)/assets/Config.json" />
+    </init>
+</root>
