@@ -76,3 +76,5 @@ DerivedDataCache/*
 /.idea
 .vsconfig
 /Package
+/Content/Python/.idea
+/Tools/Benchmark
