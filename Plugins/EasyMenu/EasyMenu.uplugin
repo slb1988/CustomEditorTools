@@ -1,0 +1,25 @@
+{
+  "FileVersion": 1,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "Easy Menu",
+  "Description": "用最少的代码快速创建UI元素",
+  "Category": "Performance",
+  "CreatedBy": "sepsun",
+  "CreatedByURL": "",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "CanContainContent": true,
+  "Installed": true,
+  "Modules": [
+    {
+      "Name": "EasyMenu",
+      "Type": "Editor",
+      "LoadingPhase": "Default",
+      "WhitelistPlatforms": [
+        "Win64"
+      ]
+    }
+  ]
+}
