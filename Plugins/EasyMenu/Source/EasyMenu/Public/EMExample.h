@@ -67,7 +67,7 @@ public:
 	// Menu usage same as menu example 
 };
 
-UCLASS(meta=(EMTargetClass="AcActorPoiRay"))
+UCLASS(meta=(EMTargetClass="Actor"))
 class UMyActorExample1 : public UObject
 {
 	GENERATED_BODY()
