@@ -6,6 +6,7 @@
 #include "Editor.h"
 #include "Framework/MultiBox/MultiBoxBuilder.h"
 #include "Textures/SlateIcon.h"
+#include "IContentBrowserSingleton.h"
 
 
 void FAssetMenuPathHalper::RebuildNodes()
