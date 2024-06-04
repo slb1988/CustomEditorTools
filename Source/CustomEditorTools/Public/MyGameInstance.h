@@ -22,4 +22,8 @@ public:
 	
 private:
 	void LoadServerDispatchUrl();
+
+public:
+	UFUNCTION(BlueprintCallable, Category="FlatBuffers")
+	void LoadFlatBuffersDataTest();
 };

@@ -2,6 +2,7 @@
 
 
 #include "MyGameInstance.h"
+#include "text_cn_generated.h"
 
 #define PROJECT_CONFIG_FILE TEXT("Config.json")
 
@@ -20,6 +21,8 @@ void UMyGameInstance::Init()
 	{
 		LoadServerDispatchUrl();
 	}
+
+	LoadFlatBuffersDataTest();
 }
 
 void UMyGameInstance::LoadServerDispatchUrl()
@@ -58,4 +61,11 @@ void UMyGameInstance::LoadServerDispatchUrl()
 
 		UE_LOG(LogTemp, Warning, TEXT("LoadServerDispatchUrl Url: %s"), *Url.Get()->AsString());
 	}
+}
+
+void UMyGameInstance::LoadFlatBuffersDataTest()
+{
+	fb::text_cnT table;
+	//table.text_cns
+	
 }
