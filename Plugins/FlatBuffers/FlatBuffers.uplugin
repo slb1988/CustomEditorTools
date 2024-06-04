@@ -1,0 +1,22 @@
+{
+  "FileVersion": 1,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "FlatBuffers",
+  "Description": "",
+  "Category": "Performance",
+  "CreatedBy": "sepsun",
+  "CreatedByURL": "",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "CanContainContent": true,
+  "Installed": true,
+  "Modules": [
+    {
+      "Name": "FlatBuffers",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ]
+}
