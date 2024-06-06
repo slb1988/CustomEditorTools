@@ -19,6 +19,10 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Debug")
     static void PrintObjectProperties(UObject* Object, int32 Indent = 4);
 
+	// Function to print UObject properties with indentation
+	UFUNCTION(BlueprintCallable, Category = "Debug")
+	static void PrintObjectHashTableInfo(UObject* Object, int32 Indent = 4);
+
 private:
     static void PrintProperty(FProperty* Property, void* PropertyValue, int32 Indent);
 };

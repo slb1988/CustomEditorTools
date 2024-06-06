@@ -2,6 +2,8 @@
 
 
 #include "MyBlueprintFunctionLibrary.h"
+#include "UObject/UObjectHash.h"
+#include "UObject/UObjectIterator.h"
 
 void UMyBlueprintFunctionLibrary::PrintObjectProperties(UObject* Object, int32 Indent)
 {
@@ -26,6 +28,16 @@ void UMyBlueprintFunctionLibrary::PrintObjectProperties(UObject* Object, int32 I
         // Print the property
         PrintProperty(Property, Property->ContainerPtrToValuePtr<void>(Object), Indent + 2);
     }
+}
+
+void UMyBlueprintFunctionLibrary::PrintObjectHashTableInfo(UObject* Object, int32 Indent)
+{
+    UPackage* Package = Object->GetPackage();
+    TArray<UObject*> PackageObjects;
+    GetObjectsWithPackage(Package, PackageObjects);
+
+    UE_LOG(LogTemp, Warning, TEXT("PackageObjects Num : %d"), PackageObjects.Num());
+    // FUObjectHashTables* ObjectHashTables = FUObjectHashTables::Get();
 }
 
 void UMyBlueprintFunctionLibrary::PrintProperty(FProperty* Property, void* PropertyValue, int32 Indent)

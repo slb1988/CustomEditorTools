@@ -17,9 +17,22 @@ def getSelectionContentBrowser():
     for selectedAsset in selectedAssets:
         print(selectedAsset)
 
+def getAllActors():
+    EAS = unreal.EditorActorSubsystem()
+    actors = EAS.get_all_level_actors()
+    for actor in actors:
+        print(actor)
+
+def getSelectedActors():
+    EAS = unreal.EditorActorSubsystem
+    selectedActors = EAS.get_selected_level_actors()
+    for selectedActor in selectedActors:
+        print(selectedActor)
 
 # 你的其他 Python 脚本内容
 print("Script executed successfully.")
 
 listAssetPaths()
 getSelectionContentBrowser()
+getAllActors()
+getSelectedActors()
