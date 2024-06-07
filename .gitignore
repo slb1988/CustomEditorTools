@@ -81,3 +81,4 @@ DerivedDataCache/*
 /Plugins/UnLuaExtensions/LuaProtobuf/Intermediate
 /Plugins/UnLuaExtensions/LuaRapidjson/Intermediate
 /Plugins/UnLuaExtensions/LuaSocket/Intermediate
+/Plugins/UnLua/Source/UnLuaDefaultParamCollectorUbtPlugin/obj
