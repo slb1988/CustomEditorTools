@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{ED432D62-4520-E14B-D3B0-08BFE0D13352}",
+	"EngineAssociation": "",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -21,6 +21,10 @@
 			"TargetAllowList": [
 				"Editor"
 			]
+		},
+		{
+			"Name": "EasyMenu",
+			"Enabled": true
 		}
 	]
 }
