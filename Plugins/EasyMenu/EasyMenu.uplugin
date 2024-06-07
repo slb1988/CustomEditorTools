@@ -16,10 +16,7 @@
     {
       "Name": "EasyMenu",
       "Type": "Editor",
-      "LoadingPhase": "Default",
-      "WhitelistPlatforms": [
-        "Win64"
-      ]
+      "LoadingPhase": "Default"
     }
   ]
 }

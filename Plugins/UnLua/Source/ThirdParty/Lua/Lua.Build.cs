@@ -440,15 +440,17 @@ public class Lua : ModuleRules
                 return "Ninja";
             if (Target.Platform.IsInGroup(UnrealPlatformGroup.Android))
                 return "Ninja";
-//             if (Target.Platform.IsInGroup(UnrealPlatformGroup.Windows))
-//             {
-//                 if (Target.WindowsPlatform.Compiler == WindowsCompiler.VisualStudio2019)
-//                     return "Visual Studio 16 2019";
-// #if UE_4_27_OR_LATER
-//                 if (Target.WindowsPlatform.Compiler == WindowsCompiler.VisualStudio2022)
-//                     return "Visual Studio 17 2022";
-// #endif
-//             }
+            if (Target.Platform.IsInGroup(UnrealPlatformGroup.Windows))
+            {
+#if !UE_5_3_OR_LATER
+                if (Target.WindowsPlatform.Compiler == WindowsCompiler.VisualStudio2019)
+                    return "Visual Studio 16 2019";
+#endif
+#if UE_4_27_OR_LATER
+                if (Target.WindowsPlatform.Compiler == WindowsCompiler.VisualStudio2022)
+                    return "Visual Studio 17 2022";
+#endif
+            }
         }
 
         if (osPlatform == PlatformID.Unix)
