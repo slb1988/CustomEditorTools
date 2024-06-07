@@ -78,3 +78,6 @@ DerivedDataCache/*
 /Package
 /Content/Python/.idea
 /Tools/Benchmark
+/Plugins/UnLuaExtensions/LuaProtobuf/Intermediate
+/Plugins/UnLuaExtensions/LuaRapidjson/Intermediate
+/Plugins/UnLuaExtensions/LuaSocket/Intermediate

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AQGzDilV4mtPsGq87mOlK5FxEZd0zvd6My5n/3NIGR6se9fd5KNMeKeov9tFEdVVonXuuVnnhgZbQFEw6k2Z5g==",
+  "success": true,
+  "projectFilePath": "D:\\UnrealEngineGit\\CustomEditorTools\\Plugins\\UnLua\\Source\\UnLuaDefaultParamCollectorUbtPlugin\\UnLuaDefaultParamCollectorUbtPlugin.ubtplugin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
