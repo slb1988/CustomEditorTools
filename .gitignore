@@ -83,3 +83,5 @@ DerivedDataCache/*
 /Plugins/UnLuaExtensions/LuaSocket/Intermediate
 /Plugins/UnLua/Source/UnLuaDefaultParamCollectorUbtPlugin/obj
 /Plugins/UnLua/Source/ThirdParty/Lua/lua-5.4.3/build
+UnrealEditor.modules
+Plugins/UnLua/Source/UnLuaDefaultParamCollectorUbtPlugin/UnLuaDefaultParamCollectorUbtPlugin.ubtplugin.csproj.props
