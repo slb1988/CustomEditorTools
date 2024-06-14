@@ -86,3 +86,4 @@ DerivedDataCache/*
 UnrealEditor.modules
 Plugins/UnLua/Source/UnLuaDefaultParamCollectorUbtPlugin/UnLuaDefaultParamCollectorUbtPlugin.ubtplugin.csproj.props
 /Plugins/UnLuaExtensions/LuaProtobuf/Binaries
+/Programs/UnrealPakViewer/Saved
