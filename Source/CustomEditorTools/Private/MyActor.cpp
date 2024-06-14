@@ -3,12 +3,21 @@
 
 #include "MyActor.h"
 
+int AMyActor::b = 2;
 // Sets default values
 AMyActor::AMyActor()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+}
+
+AMyActor::AMyActor(const FObjectInitializer& ObjectInitializer)
+{
+	PrimaryActorTick.bCanEverTick = false;
+
+	// UClass* CharacterClass = LoadClass<ACharacter>(this, TEXT(""));
+	
 }
 
 // Called when the game starts or when spawned

@@ -1,0 +1,61 @@
+{
+	"versionId": "1.0.0",
+	"byPakList": false,
+	"platformsPakListFiles": [],
+	"bImportProjectSettings": true,
+	"addExternAssetsToPlatform": [
+		{
+			"targetPlatform": "Windows",
+			"addExternFileToPak": [],
+			"addExternDirectoryToPak": [
+				{
+					"directoryPath":
+					{
+						"path": "D:/UnrealEngineGit/CustomEditorTools/Content/Script"
+					},
+					"mountPoint": "../../../CustomEditorTools/Content/Script",
+					"bWildcard": false,
+					"wildcardStr": ""
+				}
+			]
+		}
+	],
+	"bBackupMetadata": false,
+	"bBackupProjectConfig": false,
+	"backupMetadataPlatforms": [],
+	"bNoShaderCompile": true,
+	"assetScanConfig":
+	{
+		"bPackageTracker": true,
+		"assetIncludeFilters": [],
+		"assetIgnoreFilters": [],
+		"bIncludeHasRefAssetsOnly": false,
+		"bAnalysisFilterDependencies": true,
+		"assetRegistryDependencyTypes": [
+			"Packages"
+		],
+		"includeSpecifyAssets": [],
+		"bRecursiveWidgetTree": true,
+		"bAnalysisMaterialInstance": true,
+		"bSupportWorldComposition": false,
+		"bForceSkipContent": true,
+		"forceSkipContentRules": [
+			{
+				"path": "/Game/__ExternalActors__"
+			},
+			{
+				"path": "/Game/__ExternalObjects__"
+			}
+		],
+		"forceSkipAssets": [],
+		"forceSkipClasses": []
+	},
+	"bStorageConfig": true,
+	"savePath":
+	{
+		"path": "[PROJECTDIR]/Saved/HotPatcher/"
+	},
+	"hashCalculator": "MD5",
+	"bStandaloneMode": true,
+	"additionalCommandletArgs": []
+}

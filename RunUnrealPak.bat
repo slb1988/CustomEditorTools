@@ -1,0 +1,2 @@
+D:\UnrealEngineGit\Engine\Binaries\Win64\UnrealPak.exe "D:\UnrealEngineGit\CustomEditorTools\CustomEditorTools.uproject"  -cryptokeys="D:\UnrealEngineGit\CustomEditorTools\Saved\Cooked\Windows\CustomEditorTools\Metadata\Crypto.json" -patchpaddingalign=2048 -compressionformats=Oodle -compresslevel=4 -compressmethod=Kraken  -platform=Windows  -CreateMultiple="D:\UnrealEngineGit\Engine\Programs\AutomationTool\Saved\Logs\PakCommands.txt"
+pause

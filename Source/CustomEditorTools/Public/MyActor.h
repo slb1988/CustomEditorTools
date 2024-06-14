@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "MyActor.generated.h"
 
+static int a;
 UCLASS()
 class CUSTOMEDITORTOOLS_API AMyActor : public AActor
 {
@@ -14,7 +15,9 @@ class CUSTOMEDITORTOOLS_API AMyActor : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AMyActor();
+	AMyActor(const FObjectInitializer& ObjectInitializer);
 
+	static int b;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

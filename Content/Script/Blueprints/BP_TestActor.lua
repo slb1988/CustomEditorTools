@@ -5,6 +5,7 @@
 -- @AUTHOR **
 -- @DATE ${date} ${time}
 --
+Screen = require("Tutorials.Screen")
 
 ---@type BP_TestActor_C
 local M = UnLua.Class()
@@ -18,10 +19,9 @@ local M = UnLua.Class()
 function M:ReceiveBeginPlay()
     local msg = [[
     Hello World!
-
-    —— 本示例来自 "Content/Script/Blueprints/BP_TestActor.lua"
+    —— 001
     ]]
-    print(msg)
+    Screen.Print(msg)
 end
 
 -- function M:ReceiveEndPlay()
