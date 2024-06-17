@@ -28,6 +28,7 @@ public class LuaProtobuf : ModuleRules
         bUseUnity = false;
         PCHUsage = PCHUsageMode.NoSharedPCHs;
         bEnableUndefinedIdentifierWarnings = false;
+        PrivatePCHHeaderFile = "Public/LuaProtobufModule.h";
 
         PublicDependencyModuleNames.AddRange(
             new[]
