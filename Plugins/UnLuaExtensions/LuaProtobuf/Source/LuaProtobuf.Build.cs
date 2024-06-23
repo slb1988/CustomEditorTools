@@ -26,7 +26,7 @@ public class LuaProtobuf : ModuleRules
         bEnforceIWYU = false;
 #endif
         bUseUnity = false;
-        PCHUsage = PCHUsageMode.NoSharedPCHs;
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bEnableUndefinedIdentifierWarnings = false;
         PrivatePCHHeaderFile = "Public/LuaProtobufModule.h";
 

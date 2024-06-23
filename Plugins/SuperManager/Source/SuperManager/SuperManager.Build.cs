@@ -43,6 +43,8 @@ public class SuperManager : ModuleRules
 				"SlateCore",
                 "Blutility",
                 "EditorScriptingUtilities",
+                "UnrealEd",
+                "AssetTools",
 				// ... add private dependencies that you statically link with here ...
 			}
 			);
