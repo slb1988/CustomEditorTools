@@ -45,6 +45,7 @@ public class SuperManager : ModuleRules
                 "EditorScriptingUtilities",
                 "UnrealEd",
                 "AssetTools",
+                "ContentBrowser",
 				// ... add private dependencies that you statically link with here ...
 			}
 			);

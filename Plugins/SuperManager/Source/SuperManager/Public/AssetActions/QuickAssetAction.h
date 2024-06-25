@@ -16,6 +16,8 @@
 #include "NiagaraEmitter.h"
 #include "QuickAssetAction.generated.h"
 
+// typedef TDelegate<void()> DelegateName;;
+// DECLARE_DYNAMIC_DELEGATE_OneParam(DelegateName, int, a);
 /**
  * 
  */
