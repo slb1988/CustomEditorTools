@@ -1,0 +1,2 @@
+/Game/Blueprints/BP_MyActor.BP_MyActor
+/Game/Blueprints/BP_TestActor.BP_TestActor
