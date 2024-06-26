@@ -114,11 +114,11 @@ void AMyActor::PuerBlueprintFunc(int& a)
 	a = 2;
 }
 
-void AMyActor::SendMessage(const FSampleMessage& InMessage)
-{
-	UGameplayMessageSubsystem& MessageSubsystem = UGameplayMessageSubsystem::Get(GetWorld());
-	MessageSubsystem.BroadcastMessage(TAG_Sample_Channel, InMessage);
-}
+// void AMyActor::SendMessage(const FSampleMessage& InMessage)
+// {
+// 	UGameplayMessageSubsystem& MessageSubsystem = UGameplayMessageSubsystem::Get(GetWorld());
+// 	MessageSubsystem.BroadcastMessage(TAG_Sample_Channel, InMessage);
+// }
 
 FTransform AMyActor::GetTransformTest() const
 {

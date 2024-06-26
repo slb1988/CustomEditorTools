@@ -2,9 +2,12 @@
 
 #include "SuperManager.h"
 
+#include "AssetToolsModule.h"
 #include "ContentBrowserModule.h"
 #include "EditorAssetLibrary.h"
 #include "DebugHeader.h"
+#include "ObjectTools.h"
+#include "AssetRegistry/AssetRegistryModule.h"
 
 #define LOCTEXT_NAMESPACE "FSuperManagerModule"
 
@@ -65,6 +68,8 @@ void FSuperManagerModule::AddCBMenuEntry(FMenuBuilder& MenuBuilder)
 
 void FSuperManagerModule::OnDeleteUnusedAssetButtonClicked()
 {
+	FixUpRedirectors();
+	
 	if (FolderPathsSelected.Num() > 1)
 	{
 		DebugHeader::ShowMsgDialog(EAppMsgType::Ok, TEXT("You only do this to one folder"));
@@ -78,17 +83,72 @@ void FSuperManagerModule::OnDeleteUnusedAssetButtonClicked()
 		return;
 	}
 
-	EAppReturnType::Type ConfirmResult =
-		DebugHeader::ShowMsgDialog(EAppMsgType::YesNo, TEXT("A total of ") + FString::FromInt(AssetsPathNames.Num()) + TEXT(" found.\nWould you like to procceed?"));
-	if (ConfirmResult == EAppReturnType::No) return;
-	
-	TArray<FAssetData> UnusedAssetsData;
+	TArray<FAssetData> UnusedAssetsDataArray;
 
 	for (const FString& AssetPathName : AssetsPathNames)
 	{
-		// Don't touch root folder avoid crash
+		// Don't touch root folder avoid crash，Developer, Collections
+		if (AssetPathName.Contains("Developers")
+			|| AssetPathName.Contains("Collections"))
+		{
+			continue;
+		}
+		if (!UEditorAssetLibrary::DoesAssetExist(AssetPathName)) continue;
+
+		TArray<FString> AssetReferencers =
+			UEditorAssetLibrary::FindPackageReferencersForAsset(AssetPathName);
+
+		if (AssetReferencers.Num() == 0)
+		{
+			const FAssetData UnusedAssetData = UEditorAssetLibrary::FindAssetData(AssetPathName);
+			UnusedAssetsDataArray.Add(UnusedAssetData);
+		}
+	}
+
+	EAppReturnType::Type ConfirmResult =
+		DebugHeader::ShowMsgDialog(EAppMsgType::YesNo, TEXT("A total of ") + FString::FromInt(UnusedAssetsDataArray.Num()) + TEXT(" found.\nWould you like to procceed?"));
+	if (ConfirmResult == EAppReturnType::No) return;
+	
+	if (UnusedAssetsDataArray.Num() > 0)
+	{
+		ObjectTools::DeleteAssets(UnusedAssetsDataArray);
+	}
+	else
+	{
+		DebugHeader::ShowMsgDialog(EAppMsgType::Ok, TEXT("No unused asset found under selected folder"));
 	}
 	
+}
+
+void FSuperManagerModule::FixUpRedirectors()
+{
+	
+	TArray<UObjectRedirector*> RedirectorsToFixArray;
+
+	const FAssetRegistryModule& AssetRegistryModule =
+		FModuleManager::Get().LoadModuleChecked<FAssetRegistryModule>(TEXT("AssetRegistry"));
+
+	FARFilter Filter;
+	Filter.bRecursivePaths = true;
+	Filter.PackagePaths.Emplace("/Game");
+	Filter.ClassPaths.Emplace("/Script/CoreUObject/ObjectRedirector");
+
+	TArray<FAssetData> OutRedirectors;
+
+	AssetRegistryModule.Get().GetAssets(Filter, OutRedirectors);
+
+	for (const FAssetData& RedirectorData : OutRedirectors)
+	{
+		if (UObjectRedirector* RedirectorToFix = Cast<UObjectRedirector>(RedirectorData.GetAsset()))
+		{
+			RedirectorsToFixArray.Add(RedirectorToFix);
+		}
+	}
+
+	FAssetToolsModule& AssetToolsModule
+		= FModuleManager::LoadModuleChecked<FAssetToolsModule>(TEXT("AssetTools"));
+
+	AssetToolsModule.Get().FixupReferencers(RedirectorsToFixArray, true);
 }
 
 

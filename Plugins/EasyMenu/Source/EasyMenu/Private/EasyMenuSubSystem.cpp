@@ -81,7 +81,7 @@ void UEasyMenuSubSystem::CollectMenuPath()
 			if(TargetClass == nullptr)
 			{
 				TargetClass = FindObjectSafe<UClass>(ANY_PACKAGE, TEXT("Object"));
-				UE_LOG(LogClass, Error, TEXT("Can't find Class: %s, Replace with Object "))
+				UE_LOG(LogClass, Error, TEXT("Can't find Class: %s, Replace with Object "), *TargetClass->GetName())
 			}
 		}
 		

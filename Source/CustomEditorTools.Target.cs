@@ -8,8 +8,9 @@ public class CustomEditorToolsTarget : TargetRules
 	public CustomEditorToolsTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		DefaultBuildSettings = BuildSettingsVersion.V4;
-		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_3;
+		DefaultBuildSettings = BuildSettingsVersion.Latest;
+		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
+		BuildEnvironment = TargetBuildEnvironment.Shared;
 		ExtraModuleNames.Add("CustomEditorTools");
 	}
 }

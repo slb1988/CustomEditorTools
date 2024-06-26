@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
 #include "GameFramework/Actor.h"
-#include "GameplayMessage/SampleMessage.h"
+// #include "GameplayMessage/SampleMessage.h"
 #include "MyActor.generated.h"
 
 UENUM(BlueprintType)
@@ -63,8 +63,8 @@ public:
 	// UFUNCTION(BlueprintNativeEvent)
 	// void BlueprintNativeFunc();
 
-	UFUNCTION(BlueprintCallable)
-	void SendMessage(const FSampleMessage& InMessage);
+	// UFUNCTION(BlueprintCallable)
+	// void SendMessage(const FSampleMessage& InMessage);
 
 	UFUNCTION(BlueprintCallable)
 	FTransform GetTransformTest() const;
