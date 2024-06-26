@@ -362,7 +362,7 @@ ENamingConventionValidationResult UEditorNamingValidatorSubsystem::DoesAssetMatc
             }
         }
 
-        result = DoesAssetMatchesClassDescriptions( error_message, asset_real_class, asset_name );
+        result = DoesAssetMatchesClassDescriptions( error_message, asset_real_class, asset_name, asset_data );
         if ( result != ENamingConventionValidationResult::Unknown )
         {
             return result;
@@ -401,7 +401,7 @@ bool UEditorNamingValidatorSubsystem::IsClassExcluded( FText & error_message, co
     return false;
 }
 
-ENamingConventionValidationResult UEditorNamingValidatorSubsystem::DoesAssetMatchesClassDescriptions( FText & error_message, const UClass * asset_class, const FString & asset_name ) const
+ENamingConventionValidationResult UEditorNamingValidatorSubsystem::DoesAssetMatchesClassDescriptions( FText & error_message, const UClass * asset_class, const FString & asset_name, const FAssetData& asset_data ) const
 {
     const auto * settings = GetDefault< UNamingConventionValidationSettings >();
     const UClass* MostPreciseClass = UObject::StaticClass();

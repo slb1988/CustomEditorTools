@@ -33,7 +33,7 @@ private:
     void ValidateOnSave( const TArray< FAssetData > & asset_data_list ) const;
     ENamingConventionValidationResult DoesAssetMatchNameConvention( FText & error_message, const FAssetData & asset_data, FName asset_class, bool can_use_editor_validators = true ) const;
     bool IsClassExcluded( FText & error_message, const UClass * asset_class ) const;
-    ENamingConventionValidationResult DoesAssetMatchesClassDescriptions( FText & error_message, const UClass * asset_class, const FString & asset_name ) const;
+    ENamingConventionValidationResult DoesAssetMatchesClassDescriptions( FText & error_message, const UClass * asset_class, const FString & asset_name, const FAssetData& asset_data ) const;
     ENamingConventionValidationResult DoesAssetMatchesValidators( FText & error_message, const UClass * asset_class, const FAssetData & asset_data ) const;
 
     UPROPERTY( config )

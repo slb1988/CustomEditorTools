@@ -54,6 +54,17 @@ bool UNamingConventionValidationSettings::IsPathExcludedFromValidation( const FS
         }
     }
 
+	for (const FString& excluded_pattern : ExcludedDirPatterns)
+	{
+		FRegexPattern Pattern(excluded_pattern);
+		FRegexMatcher RegexMatcher(Pattern, path);
+		RegexMatcher.SetLimits(0, path.Len());
+		if (RegexMatcher.FindNext())
+		{
+			return true;
+		}
+	}
+
     return false;
 }
 

@@ -51,6 +51,9 @@ public:
 
     UPROPERTY( config, EditAnywhere, meta = ( LongPackageName, ConfigRestartRequired = true ) )
     TArray< FDirectoryPath > ExcludedDirectories;
+    
+    UPROPERTY( config, EditAnywhere )
+    TArray< FString > ExcludedDirPatterns;
 
     UPROPERTY( config, EditAnywhere )
     uint8 bLogWarningWhenNoClassDescriptionForAsset : 1;
