@@ -1,0 +1,1 @@
+..\Engine\Binaries\Win64\UnrealPak.exe ./Test1.pak -create=D:\UnrealEngineLatest\CustomEditorTools\Saved\Cooked\Windows\CustomEditorTools\Content\DLC

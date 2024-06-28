@@ -9,7 +9,13 @@ public class CustomEditorTools : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "FlatBuffers", "GameplayMessageRuntime", "GameplayTags" });
+		PublicDependencyModuleNames.AddRange(new string[]
+		{
+			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "FlatBuffers",
+			"GameplayMessageRuntime",
+			"GameplayTags",
+			"PakFile",
+		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { "Json" });
 
@@ -35,5 +41,7 @@ public class CustomEditorTools : ModuleRules
 			System.Console.WriteLine($"ConfigFilePath {ConfigFilePath}");
 			RuntimeDependencies.Add(ConfigFilePath);
 		}
+		
+		// PublicDefinitions.Add("WITH_LOW_LEVEL_TESTS=1");
 	}
 }
