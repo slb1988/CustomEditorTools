@@ -29,6 +29,8 @@ public:
 protected:
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	virtual void Deinitialize() override;
+	
+	void OnAllModuleLoadingPhasesComplete();
 private:
 	void CollectIcons();
 	void CollectMenuPath();

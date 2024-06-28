@@ -23,18 +23,23 @@ void UEasyMenuSubSystem::Initialize(FSubsystemCollectionBase& Collection)
 {
 	StyleSet = MakeShareable(new FSlateStyleSet(FName(TEXT(TEXT_EM_STYLE))));
 	FSlateStyleRegistry::RegisterSlateStyle(*StyleSet);
+	
+	FCoreDelegates::OnAllModuleLoadingPhasesComplete.AddUObject(this, &UEasyMenuSubSystem::OnAllModuleLoadingPhasesComplete);
+}
 
+void UEasyMenuSubSystem::Deinitialize()
+{
+	FSlateStyleRegistry::UnRegisterSlateStyle(*StyleSet);
+}
+
+void UEasyMenuSubSystem::OnAllModuleLoadingPhasesComplete()
+{
 	CollectIcons();
 	CollectMenuPath();
 
 	InitAssetEditMenu();
 	InitActorEditMenu();
 	InitToolBar();
-}
-
-void UEasyMenuSubSystem::Deinitialize()
-{
-	FSlateStyleRegistry::UnRegisterSlateStyle(*StyleSet);
 }
 
 //收集所有类标记的icon
